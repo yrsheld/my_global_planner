@@ -17,4 +17,7 @@ Current avaialble options:
    * ```roslaunch my_global_planner plan.launch```
 
 ## Result
+
+The global plan is visualized as the green line.
+
 <img src=dijkstra_demo.gif height="300">
