@@ -21,7 +21,7 @@ namespace my_global_planner{
         //initialize the start_idx
         gcost[start_idx] = 0;
         float h = heuristic(start_idx, goal_idx, map_size_x);
-        fcost[start_idx] = h;  //g+h = 0+h
+        fcost[start_idx] = h;
         openList.insert({fcost[start_idx], start_idx});
         
         while(!openList.empty()){
@@ -40,7 +40,7 @@ namespace my_global_planner{
             //keep on spanning, get all valid neighbors
             std::vector<std::pair<int, float>> neighbors;
             find_neighbors(idx, obstacle_thresh, costmap2D_ptr, neighbors);
-            
+
             for(std::pair<int,float>& p : neighbors){
                 int next_idx = p.first;
                 float step_cost = p.second;

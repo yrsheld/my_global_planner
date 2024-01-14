@@ -6,8 +6,8 @@ namespace my_global_planner{
         //calculate the euclidean distance between idx_0 & idx_1
         
         //convert 1d idx to 2d grid cell
-        std::pair<int, int> a = {int(floor(idx_a/map_width)), idx_a/map_width};
-        std::pair<int, int> b = {int(floor(idx_b/map_width)), idx_b/map_width};
+        std::pair<int, int> a = {int(floor(idx_a/map_width)), idx_a%map_width};
+        std::pair<int, int> b = {int(floor(idx_b/map_width)), idx_b%map_width};
 
         return pow((a.first-b.first),2)+pow((a.second-b.second),2);
     }
